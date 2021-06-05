@@ -7,6 +7,7 @@ import Nav from "./Components/Nav";
 import Banner from "./Components/Banner";
 import Main from "./Components/Main";
 import Form from "./Components/Form";
+import Footer from "./Components/Footer";
 
 const StyledApp = styled.div``;
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Banner />
       <Main />
       <Form />
+      <Footer />
     </StyledApp>
   );
 };

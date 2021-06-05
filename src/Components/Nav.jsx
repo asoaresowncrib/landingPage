@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import noSloganLogo from "../Assets/logoNoSlogan.png";
+import { IoPersonSharp } from "react-icons/io5";
 const StyledNav = styled.div`
   .navLinks {
     display: grid;
@@ -29,6 +30,20 @@ const StyledNav = styled.div`
     .navLink {
       padding: 0 1rem;
     }
+  }
+
+  .rightNav {
+    display: flex;
+    align-items: center;
+    
+    li{
+      padding 0 1rem;
+    }
+
+    .navPerson{
+      font-size: 2rem;
+    }
+
   }
 
   .logoContainer {
@@ -71,6 +86,11 @@ const Nav = () => {
         <div className="rightNav">
           <li className="navLink">
             <a>Login</a>
+          </li>
+          <li className="navLink">
+            <a className="navPerson">
+              <IoPersonSharp />
+            </a>
           </li>
         </div>
       </ul>

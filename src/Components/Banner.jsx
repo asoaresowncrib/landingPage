@@ -8,7 +8,7 @@ const StyledBanner = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  animation: 0.5s ease-out 0s 1 slideUp;
+  animation: 1s ease-out 0s 1 slideUp;
   // background: #ffbd59;
 
   > * {
