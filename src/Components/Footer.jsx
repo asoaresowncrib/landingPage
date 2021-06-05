@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 
 const StyledFooter = styled.div`
+  margin-top: 10rem;
   padding: 2rem 1rem;
   display: flex;
   justify-content: space-between;

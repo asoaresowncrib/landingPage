@@ -24,7 +24,6 @@ const StyledForm = styled.div`
     justify-content: center;
     color: #ffc983;
     padding: 1rem;
-    // color: #03989e;
 
     a {
       cursor: pointer;
