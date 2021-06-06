@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import styled from "styled-components";
 import {
@@ -7,10 +8,11 @@ import {
   FaInstagram,
   FaPinterest,
 } from "react-icons/fa";
+import Fade from "react-reveal/Fade";
 
 const StyledForm = styled.div`
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 5rem auto 0 auto;
 
   .formTitle {
     font-size: 3rem;
@@ -64,11 +66,11 @@ const StyledForm = styled.div`
       font-family: Poppins, sans-serif;
       background: white;
       border: 2px solid #03989e;
-      color: #03989e;
       transition: all 0.25s ease-in;
 
       &:hover {
-        background: rgba(254, 192, 100, 0.7);
+        background: #03989e;
+        color: #ffc983;
       }
     }
   }
@@ -76,49 +78,55 @@ const StyledForm = styled.div`
 
 const Form = () => {
   return (
-    <StyledForm>
-      <h1 className="formTitle">For More Infomation</h1>
-      <div className="socials">
-        <a>
-          <FaFacebookF />
-        </a>
-        <a>
-          <FaTwitter />
-        </a>
-        <a>
-          <FaLinkedinIn />
-        </a>
-        <a>
-          <FaInstagram />
-        </a>
-        <a>
-          <FaPinterest />
-        </a>
-      </div>
-      <form className="infoForm" action="">
-        <div className="twoColumns">
-          <input type="text" className="input nameInput" placeholder="Name" />
-          <input
-            type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            placeholder="000-000-0000"
-            className="input phoneInput"
-          />
+    <Fade bottom>
+      <StyledForm>
+        <h1 className="formTitle">For More Infomation</h1>
+        <div className="socials">
+          <a>
+            <FaFacebookF />
+          </a>
+          <a>
+            <FaTwitter />
+          </a>
+          <a>
+            <FaLinkedinIn />
+          </a>
+          <a>
+            <FaInstagram />
+          </a>
+          <a>
+            <FaPinterest />
+          </a>
         </div>
-        <input type="email" className="input emailInput" placeholder="Email" />
-        <input
-          type="text"
-          className="input subjectInput"
-          placeholder="Subject"
-        />
-        <textarea
-          rows="5"
-          className="input messageInput"
-          placeholder="Type your message here..."
-        />
-        <input type="submit" name="Submit" className="submitInput" />
-      </form>
-    </StyledForm>
+        <form className="infoForm" action="">
+          <div className="twoColumns">
+            <input type="text" className="input nameInput" placeholder="Name" />
+            <input
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder="000-000-0000"
+              className="input phoneInput"
+            />
+          </div>
+          <input
+            type="email"
+            className="input emailInput"
+            placeholder="Email"
+          />
+          <input
+            type="text"
+            className="input subjectInput"
+            placeholder="Subject"
+          />
+          <textarea
+            rows="5"
+            className="input messageInput"
+            placeholder="Type your message here..."
+          />
+          <input type="submit" name="Submit" className="submitInput" />
+        </form>
+      </StyledForm>
+    </Fade>
   );
 };
 

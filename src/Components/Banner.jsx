@@ -1,24 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import placeholderVideo from "../Assets/placeholderVideo.mp4";
 
 const StyledBanner = styled.div`
-  min-height: 750px;
+  min-height: 90vh;
   max-width: 95%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   animation: 1s ease-out 0s 1 slideUp;
+  align-items: center;
   // background: #ffbd59;
 
   > * {
-    flex-basis: 100%;
+    flex: 1 1 500px;
     text-align: center;
   }
 
   .bannerTitle {
     font-family: Poppins, sans-serif;
-    font-weight: 700;
+    font-weight: 750;
     font-size: 4rem;
     color: #03989e;
   }
@@ -40,12 +41,16 @@ const StyledBanner = styled.div`
 
   .bannerVideo {
     object-fit: cover;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: auto;
   }
 `;
 
 const Banner = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <StyledBanner>
       <h1 className="bannerTitle">

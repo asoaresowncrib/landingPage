@@ -1,7 +1,12 @@
-import React from "react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/jsx-no-comment-textnodes */
+//eslint-disable-entire-file
+// eslint-disable-next-line
+import React, { useState } from "react";
 import styled from "styled-components";
 import noSlogan from "../Assets/noSlogan.png";
-import { IoPersonSharp } from "react-icons/io5";
+import { IoPersonSharp, IoSearchSharp } from "react-icons/io5";
+
 import { Link } from "react-router-dom";
 const StyledNav = styled.div`
 // width: 100%;
@@ -23,6 +28,10 @@ const StyledNav = styled.div`
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.1s ease;
+
+    display: flex;
+    align-items: center;
+
     &:hover {
       color: #03989e;
     }
@@ -50,8 +59,10 @@ const StyledNav = styled.div`
       padding 0 1rem;
     }
 
-    .navPerson{
+    .navIcon{
       font-size: 2rem;
+      display: flex;
+      align-items: center;
     }
 
   }
@@ -73,9 +84,18 @@ const StyledNav = styled.div`
       opacity: 1;
     }
   }
+
+  .navSearch{
+    border-radius: 1rem;
+    border: 1px solid  #03989e;
+    padding: .5rem;
+    outline: none;
+
+  }
 `;
 
 const Nav = () => {
+  const [search, setSearch] = useState("");
   return (
     <StyledNav>
       <ul className="navLinks">
@@ -100,9 +120,25 @@ const Nav = () => {
             <a>Login</a>
           </li>
           <li className="navLink">
-            <a className="navPerson">
+            <a className="navIcon">
               <IoPersonSharp />
             </a>
+          </li>
+          <input
+            placeholder="City, State or ZipCode"
+            className="navSearch hidden"
+            type="text"
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
+          <li className="navLink">
+            <Link
+              to={{ pathname: "/search", state: search }}
+              className="navIcon"
+            >
+              <IoSearchSharp />
+            </Link>
           </li>
         </div>
       </ul>

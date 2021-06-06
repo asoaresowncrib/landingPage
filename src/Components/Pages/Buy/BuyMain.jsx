@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 const StyledBuy = styled.div`
   height: 100vh;
@@ -14,6 +14,10 @@ const StyledBuy = styled.div`
 `;
 
 const BuyMain = () => {
+  //Scrolls to Top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <StyledBuy>
       <h1 className="buyerTitle">Buyer Packages</h1>

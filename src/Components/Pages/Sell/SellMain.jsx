@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Card from "../../Card";
 
@@ -33,7 +33,7 @@ const sellerPackages = [
     cardSavings: "Average Savings: $15,460",
     cardValidation: cardValidation,
     cardBenefits: [
-      "Listing Place on Zillow",
+      "Listing Placed on Zillow",
       "Full Access To Real Estate Contracts",
       "Real Estate Data In Your Area",
       "Book Showings/Accep Offers Directly",
@@ -80,6 +80,9 @@ const renderSellerCards = sellerPackages.map((card, idx) => {
 });
 
 const SellMain = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <StyledSell>
       <h1 className="sellerTitle">Seller Packages</h1>
