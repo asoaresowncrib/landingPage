@@ -12,6 +12,7 @@ import Footer from "./Components/Footer";
 import BuyMain from "./Components/Pages/Buy/BuyMain";
 import SellMain from "./Components/Pages/Sell/SellMain";
 import SearchMain from "./Components/Pages/Search/SearchMain";
+import Login from "./Components/Pages/Login/Login";
 
 const fadeIn = keyframes`
 0%{
@@ -46,11 +47,9 @@ const App = () => {
           <Route exact path="/sell">
             <SellMain />
           </Route>
-          <Route exact path="/register"></Route>
-          <Route exact path="/login"></Route>
-          <Route exact path="/search" component={SearchMain}>
-            {/* <SearchMain /> */}
-          </Route>
+          <Route exact path="/register" component={Login}></Route>
+          <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/search" component={SearchMain}></Route>
         </Switch>
         <Footer />
       </StyledApp>

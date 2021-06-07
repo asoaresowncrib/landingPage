@@ -117,12 +117,12 @@ const Nav = () => {
         </div>
         <div className="rightNav">
           <li className="navLink">
-            <a>Login</a>
+            <Link to="/login">Login</Link>
           </li>
           <li className="navLink">
-            <a className="navIcon">
+            <Link to="/login" className="navIcon">
               <IoPersonSharp />
-            </a>
+            </Link>
           </li>
           <input
             placeholder="City, State or ZipCode"
